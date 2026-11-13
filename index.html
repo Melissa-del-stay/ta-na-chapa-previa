@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tá Na Chapa | Delivery</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <div class="logo">
+            <h1>🔥 TÁ NA CHAPA</h1>
+            <p>Pão, Pastel e Lanches</p>
+        </div>
+
+        <button class="botao-carrinho" id="abrirCarrinho">
+            🛒 Carrinho
+            <span id="quantidadeCarrinho">0</span>
+        </button>
+    </header>
+
+    <main>
+
+        <section class="apresentacao">
+            <h2>Seu lanche favorito está aqui!</h2>
+            <p>Escolha, peça e receba no conforto da sua casa.</p>
+        </section>
+
+        <section class="cardapio">
+
+            <h2>Nosso Cardápio</h2>
+
+            <div class="categorias">
+                <button class="categoria ativa" data-categoria="todos">
+                    Todos
+                </button>
+
+                <button class="categoria" data-categoria="hamburgueres">
+                    Hambúrgueres
+                </button>
+
+                <button class="categoria" data-categoria="hotdogs">
+                    Hot Dogs
+                </button>
+
+                <button class="categoria" data-categoria="bebidas">
+                    Bebidas
+                </button>
+            </div>
+
+            <div class="produtos" id="listaProdutos">
+                <!-- Produtos serão adicionados pelo JavaScript -->
+            </div>
+
+        </section>
+
+    </main>
+
+<!-- CARRINHO DE COMPRAS -->
+<section class="carrinho" id="carrinho">
+    <div class="carrinho-conteudo">
+
+        <div class="carrinho-cabecalho">
+            <h2>🛒 Meu Carrinho</h2>
+            <button id="fecharCarrinho">✖</button>
+        </div>
+
+        <div id="itensCarrinho">
+            <p class="carrinho-vazio">
+                Seu carrinho está vazio.
+            </p>
+        </div>
+
+        <div class="carrinho-final">
+            <h3>
+                Total:
+                <span id="valorTotal">R$ 0,00</span>
+            </h3>
+
+            <button id="finalizarPedido">
+                Finalizar pedido
+            </button>
+        </div>
+
+    </div>
+</section>
+
+<!-- FINALIZAÇÃO DO PEDIDO -->
+<section class="finalizacao" id="finalizacao">
+    <div class="finalizacao-conteudo">
+
+        <div class="finalizacao-cabecalho">
+            <h2>🔥 Finalizar pedido</h2>
+            <button id="fecharFinalizacao">✖</button>
+        </div>
+
+        <form id="formularioPedido">
+
+            <label for="nomeCliente">Seu nome</label>
+            <input type="text" id="nomeCliente"
+                placeholder="Digite seu nome" required>
+                
+<!-- ENDEREÇO DE ENTREGA -->
+
+<h3 class="titulo-endereco">📍 Endereço de entrega</h3>
+
+<label for="ruaCliente">Rua ou avenida</label>
+<input type="text" id="ruaCliente"
+    placeholder="Nome da rua" required>
+
+<label for="numeroCliente">Número</label>
+<input type="text" id="numeroCliente"
+    placeholder="Número da residência" required>
+
+<label for="bairroCliente">Bairro</label>
+<input type="text" id="bairroCliente"
+    placeholder="Seu bairro" required>
+
+<label for="complementoCliente">
+    Complemento <span class="opcional">(opcional)</span>
+</label>
+<input type="text" id="complementoCliente"
+    placeholder="Casa, apartamento, bloco...">
+
+<label for="referenciaCliente">
+    Ponto de referência <span class="opcional">(opcional)</span>
+</label>
+<input type="text" id="referenciaCliente"
+    placeholder="Ex.: próximo à praça">
+
+<label for="observacaoCliente">
+    Observações do pedido <span class="opcional">(opcional)</span>
+</label>
+<textarea id="observacaoCliente"
+    placeholder="Alguma informação importante?"></textarea>
+
+            <label for="pagamento">Forma de pagamento</label>
+            <select id="pagamento" required>
+                <option value="">Selecione</option>
+                <option value="PIX">PIX</option>
+                <option value="Cartão na entrega">Cartão na entrega</option>
+                <option value="Dinheiro">Dinheiro</option>
+            </select>
+
+            <div id="campoTroco" style="display: none;">
+                <label for="troco">Troco para quanto?</label>
+                <input type="number" id="troco"
+                    placeholder="Ex.: 50,00" min="0" step="0.01">
+            </div>
+
+            <button type="submit" id="enviarPedido">
+                Enviar pedido pelo WhatsApp
+            </button>
+
+        </form>
+    </div>
+</section>
+
+    <footer>
+        <p>🔥 Tá Na Chapa — Pão, Pastel e Lanches</p>
+        <p>Feito para deixar seu dia mais gostoso!</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
